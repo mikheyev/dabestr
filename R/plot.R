@@ -450,12 +450,16 @@ plot.dabest <- function(x, ...,
       ggplot2::ggplot(data = for.plot,
                       ggplot2::aes(!!x_enquo, !!y_enquo)) +
       rawdata.coord_cartesian +
-      ifelse(is.null(values), 
-        ggplot2::scale_color_brewer(palette = palette),
-        ggplot2::scale_color_manual(values = values)) +
       ggplot2::ylab(rawplot.ylabel) +
       ggplot2::scale_x_discrete(breaks = all.groups,
                                 labels = Ns$swarmticklabs)
+    if (is.null(values)) {
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
+      }
+    else {
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values))
+      }
+
 
       if (rawplot.type == 'swarmplot') {
 

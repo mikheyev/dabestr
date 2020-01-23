@@ -147,6 +147,7 @@
 plot.dabest <- function(x, ...,
                         color.column        = NULL,
                         palette             = "Set1",
+                        values              = NULL,
                         float.contrast      = TRUE,
                         slopegraph          = TRUE,
                         group.summaries     = "mean_sd",
@@ -449,7 +450,9 @@ plot.dabest <- function(x, ...,
       ggplot2::ggplot(data = for.plot,
                       ggplot2::aes(!!x_enquo, !!y_enquo)) +
       rawdata.coord_cartesian +
-      ggplot2::scale_color_brewer(palette = palette) +
+      ifelse(is.null(values), 
+        ggplot2::scale_color_brewer(palette = palette),
+        ggplot2::scale_color_manual(values = values)) +
       ggplot2::ylab(rawplot.ylabel) +
       ggplot2::scale_x_discrete(breaks = all.groups,
                                 labels = Ns$swarmticklabs)

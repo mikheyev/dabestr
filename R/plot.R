@@ -147,7 +147,7 @@
 plot.dabest <- function(x, ...,
                         color.column        = NULL,
                         palette             = "Set1",
-                        values              = NULL,
+                        colorValues              = NULL,
                         float.contrast      = TRUE,
                         slopegraph          = TRUE,
                         group.summaries     = "mean_sd",
@@ -457,7 +457,7 @@ plot.dabest <- function(x, ...,
       rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
       }
     else {
-      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values))
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = colorValues))
       }
 
 

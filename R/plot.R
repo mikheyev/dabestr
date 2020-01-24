@@ -460,7 +460,8 @@ plot.dabest <- function(x, ...,
       rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
       }
     else {
-      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values)
+#      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values)
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)      
       }
 
 

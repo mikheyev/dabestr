@@ -31,7 +31,7 @@
 #' @param palette default "Set1". Accepts any one of the ggplot2 palettes.
 #' See the "Palettes" section in \link{scale_color_brewer}.
 #'
-#' @param values default \code{NULL}. Accepts values that will be passed to \code{scale_color_manual}.
+#' @param colorValues default \code{NULL}. Accepts values that will be passed to \code{scale_color_manual}.
 #' See the "Values" section in \link{scale_color_manual}.
 #'
 #' @param float.contrast default \code{TRUE}.  If \code{idx} in the
@@ -150,7 +150,7 @@
 plot.dabest <- function(x, ...,
                         color.column        = NULL,
                         palette             = "Set1",
-                        values              = NULL,
+                        colorValues         = NULL,
                         float.contrast      = TRUE,
                         slopegraph          = TRUE,
                         group.summaries     = "mean_sd",
@@ -456,12 +456,11 @@ plot.dabest <- function(x, ...,
       ggplot2::ylab(rawplot.ylabel) +
       ggplot2::scale_x_discrete(breaks = all.groups,
                                 labels = Ns$swarmticklabs)
-    if (is.null(values)) { # no color values passed, use brewer scale
+    if (is.null(colorValues)) { # no color values passed, use brewer scale
       rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
       }
     else {
-#      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values)
-      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)      
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = colorValues)
       }
 
 

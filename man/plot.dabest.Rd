@@ -26,6 +26,10 @@ passed to the \code{dabest} function. This column will be treated as a
 \item{palette}{default "Set1". Accepts any one of the ggplot2 palettes.
 See the "Palettes" section in \link{scale_color_brewer}.}
 
+\item{colorValues}{default \code{NULL}. A list of color values that will be passed to ggplot2.
+See the "Values" section in \link{scale_color_manual}.}  
+  
+  
 \item{float.contrast}{default \code{TRUE}.  If \code{idx} in the
 \code{dabest} object contains only 2 groups, \code{float.contrast = TRUE}
 will plot the effect size and the bootstrap confidence interval in a

@@ -31,6 +31,9 @@
 #' @param palette default "Set1". Accepts any one of the ggplot2 palettes.
 #' See the "Palettes" section in \link{scale_color_brewer}.
 #'
+#' @param values default \code{NULL}. Accepts values that will be passed to \code{scale_color_manual}.
+#' See the "Values" section in \link{scale_color_manual}.
+#'
 #' @param float.contrast default \code{TRUE}.  If \code{idx} in the
 #'   \code{dabest} object contains only 2 groups, \code{float.contrast = TRUE}
 #'   will plot the effect size and the bootstrap confidence interval in a
@@ -147,7 +150,7 @@
 plot.dabest <- function(x, ...,
                         color.column        = NULL,
                         palette             = "Set1",
-                        colorValues              = NULL,
+                        values              = NULL,
                         float.contrast      = TRUE,
                         slopegraph          = TRUE,
                         group.summaries     = "mean_sd",
@@ -457,7 +460,7 @@ plot.dabest <- function(x, ...,
       rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
       }
     else {
-      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = colorValues))
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values))
       }
 
 

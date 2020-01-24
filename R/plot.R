@@ -456,11 +456,11 @@ plot.dabest <- function(x, ...,
       ggplot2::ylab(rawplot.ylabel) +
       ggplot2::scale_x_discrete(breaks = all.groups,
                                 labels = Ns$swarmticklabs)
-    if (is.null(values)) {
+    if (is.null(values)) { # no color values passed, use brewer scale
       rawdata.plot  <- rawdata.plot + ggplot2::scale_color_brewer(palette = palette)
       }
     else {
-      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values))
+      rawdata.plot  <- rawdata.plot + ggplot2::scale_color_manual(values = values)
       }
 
 
